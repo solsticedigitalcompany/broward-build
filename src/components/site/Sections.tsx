@@ -13,7 +13,6 @@ import {
   Gem,
   HandCoins,
   MessageSquare,
-  Broom,
   ShieldCheck,
   MapPin,
   FileText,
