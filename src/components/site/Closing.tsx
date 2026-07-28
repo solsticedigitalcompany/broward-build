@@ -159,7 +159,8 @@ export function EstimateSection() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const parsed = schema.safeParse({
       name: fd.get("name"),
       phone: fd.get("phone"),
@@ -176,7 +177,7 @@ export function EstimateSection() {
     setTimeout(() => {
       setSubmitting(false);
       toast.success("Request received — we'll reach out shortly.");
-      e.currentTarget?.reset?.();
+      form.reset();
     }, 600);
   };
 
