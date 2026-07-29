@@ -23,7 +23,6 @@ const schema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255),
   projectType: z.string().trim().min(1, "Please select a project type").max(100),
   description: z.string().trim().min(10, "Tell us a bit about the project").max(1000),
-  contactMethod: z.string().trim().min(1).max(20),
 });
 
 interface EstimateFormProps {
@@ -37,7 +36,6 @@ export function EstimateForm({
   showTitle = true,
   onSuccess,
 }: EstimateFormProps) {
-  const [contactMethod, setContactMethod] = useState("Phone");
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,7 +48,6 @@ export function EstimateForm({
       email: fd.get("email"),
       projectType: fd.get("projectType"),
       description: fd.get("description"),
-      contactMethod,
     });
     if (!parsed.success) {
       toast.error(parsed.error.issues[0].message);
@@ -141,28 +138,6 @@ export function EstimateForm({
             placeholder="Tell us about the space, timeline and any ideas you have."
             required
           />
-        </div>
-        <div className="grid gap-2 sm:col-span-2">
-          <span className="text-sm font-medium">Preferred Contact Method</span>
-          <div className="flex flex-wrap gap-2">
-            {["Phone", "Text", "Email"].map((m) => (
-              <button
-                type="button"
-                key={m}
-                onClick={() => setContactMethod(m)}
-                aria-pressed={contactMethod === m}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
-                  contactMethod === m
-                    ? "bg-accent text-accent-foreground"
-                    : isGlass
-                      ? "border border-white/25 text-primary-foreground/80 hover:border-accent"
-                      : "border border-navy/20 text-navy/80 hover:border-accent"
-                }`}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
         </div>
       </div>
       <Button
