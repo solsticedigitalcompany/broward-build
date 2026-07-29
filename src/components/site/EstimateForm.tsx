@@ -23,7 +23,6 @@ const schema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255),
   projectType: z.string().trim().min(1, "Please select a project type").max(100),
   description: z.string().trim().min(10, "Tell us a bit about the project").max(1000),
-  contactMethod: z.string().trim().min(1).max(20),
 });
 
 interface EstimateFormProps {
