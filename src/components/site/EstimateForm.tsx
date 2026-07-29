@@ -48,7 +48,6 @@ export function EstimateForm({
       email: fd.get("email"),
       projectType: fd.get("projectType"),
       description: fd.get("description"),
-      contactMethod,
     });
     if (!parsed.success) {
       toast.error(parsed.error.issues[0].message);
