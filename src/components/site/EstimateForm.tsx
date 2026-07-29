@@ -36,7 +36,6 @@ export function EstimateForm({
   showTitle = true,
   onSuccess,
 }: EstimateFormProps) {
-  const [contactMethod, setContactMethod] = useState("Phone");
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
