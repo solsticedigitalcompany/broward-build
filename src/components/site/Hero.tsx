@@ -28,11 +28,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-4 pt-28 pb-24 sm:px-6 lg:pt-32">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          <div className="order-2 lg:order-1">
-            <EstimateForm variant="navy" />
-          </div>
-
-          <div className="order-1 max-w-3xl lg:order-2">
+          <div className="max-w-3xl">
             <div className="glass-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-primary-foreground">
               <ShieldCheck className="size-4 text-accent" />
               <span className="text-xs font-bold tracking-[0.14em] uppercase">
@@ -82,6 +78,10 @@ export function Hero() {
                 Trusted by Broward County homeowners · {BUSINESS.hours}
               </p>
             </div>
+          </div>
+
+          <div>
+            <EstimateForm variant="navy" />
           </div>
         </div>
       </div>
