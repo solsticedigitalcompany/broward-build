@@ -139,28 +139,6 @@ export function EstimateForm({
             required
           />
         </div>
-        <div className="grid gap-2 sm:col-span-2">
-          <span className="text-sm font-medium">Preferred Contact Method</span>
-          <div className="flex flex-wrap gap-2">
-            {["Phone", "Text", "Email"].map((m) => (
-              <button
-                type="button"
-                key={m}
-                onClick={() => setContactMethod(m)}
-                aria-pressed={contactMethod === m}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
-                  contactMethod === m
-                    ? "bg-accent text-accent-foreground"
-                    : isGlass
-                      ? "border border-white/25 text-primary-foreground/80 hover:border-accent"
-                      : "border border-navy/20 text-navy/80 hover:border-accent"
-                }`}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
       <Button
         type="submit"
